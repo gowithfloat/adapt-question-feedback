@@ -1,0 +1,21 @@
+{
+    "name": "adapt-question-feedback",
+    "repository": "git://github.com/gowithfloat/adapt-question-feedback.git",
+    "framework": "^2.0.0",
+    "homepage": "https://github.com/gowithfloat/adapt-question-feedback",
+    "issues": "https://github.com/gowithfloat/adapt-question-feedback/issues",
+    "version": "0.3.0",
+    "authors": [
+        "Daniel Pfeiffer <dpfeiffer@gowithfloat.com>"
+    ],
+    "main": "/js/adapt-question-feedback.js",
+    "component": "question-feedback",
+    "displayName": "Question Feedback",
+    "description": "Displays feedback for a question after it has been answered",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-component"
+    ],
+    "license": "MIT",
+    "targetAttribute": "_questionFeedback"
+}

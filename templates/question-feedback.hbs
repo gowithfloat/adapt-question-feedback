@@ -1,0 +1,42 @@
+<div class="question-feedback-inner component-inner" role="region" aria-label="{{_globals._components._text.ariaRegion}}">
+	<div class="{{_component}}-header component-header">
+	    <div class="{{_component}}-header-inner component-header-inner">
+		    {{#if displayTitle}}
+	        <div class="{{_component}}-title component-title">
+	            <div role="heading" tabindex="0" class="{{_component}}-title-inner component-title-inner"  aria-level="4">
+	                {{{compile displayTitle this}}}
+	            </div>
+	        </div>
+	        {{/if}}
+
+	        {{#if feedback}}
+	        <div class="buttons">
+				<div class="buttons-marking-icon icon {{#if isCorrect}}icon-tick{{else}}icon-cross{{/if}}">
+				</div>
+			</div>
+	        <div class="{{_component}}-body component-body">
+	            <div class="{{_component}}-body-inner component-body-inner">
+	            	{{{compile_a11y_text feedback this}}}
+
+	            	{{#each selectedItems}}
+	            		{{#if feedback}}
+	            		<div class="feedback-item">
+	            			{{#unless ../_hideSelectedItem}}
+	            			<h4>{{{text}}}</h4>
+	            			{{/unless}}
+	            			<p>{{{feedback}}}</p>
+	            		</div>
+	            		{{/if}}
+	            	{{/each}}
+	            </div>
+	        </div>
+	        {{else if body}}
+	        <div class="{{_component}}-body component-body">
+	            <div class="{{_component}}-body-inner component-body-inner">
+	                {{{compile_a11y_text body this}}}
+	            </div>
+	        </div>
+	        {{/if}}
+	    </div>
+	</div>
+</div>

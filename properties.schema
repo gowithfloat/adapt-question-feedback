@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "properties":{
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "_questionId": {
+      "type": "string",
+      "required": false,
+      "inputType": "Text",
+      "title": "Question ID",
+      "help": "The ID of the question to show feedback for. If empty, the component will try to find the question automatically by first looking in the same block, then looking for the immediately preceding question.",
+      "default": "",
+      "validators": [{
+        "type": "regexp",
+        "regexp": "^[0-9a-f]{24}$",
+        "message": "This must be set to the ID number of a question"
+      }]
+    },
+    "_hideSelectedItem": {
+      "type": "boolean",
+      "required": false,
+      "inputType": "Checkbox",
+      "title": "Hide Selected Items",
+      "help": "Enable to hide the labels for the selected items when showing the selection-specific feedback.",
+      "default": false,
+      "validators": []
+    }
+  }
+}
