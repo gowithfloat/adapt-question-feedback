@@ -46,7 +46,38 @@ define(["coreJS/adapt", "coreViews/componentView"], function(Adapt, ComponentVie
             questionModel.setupFeedback();
 
             this.model.set("isCorrect", questionModel.get("_isCorrect"));
-            this.model.set("selectedItems", questionModel.get("_selectedItems"));
+
+            var selectedItems = questionModel.get("_selectedItems");
+            var hideDuplicateFeedback = this.model.get("_hideDuplicateFeedback");
+
+            if (hideDuplicateFeedback === true) {
+              // filter to only include unique responses
+              // _.uniq doesn't work in this case because all the responses have unique properties
+              var uniqueItems = [];
+
+              for (var i = 0; i < selectedItems.length; i++) {
+                var selectedItem = selectedItems[i];
+                var isUnique = true;
+
+                for (var j = 0; j < uniqueItems.length; j++) {
+                  var uniqueItem = uniqueItems[j];
+
+                  if (selectedItem.feedback.trim() == uniqueItem.feedback.trim()) {
+                    isUnique = false;
+                    break;
+                  }
+                }
+
+                if (isUnique) {
+                  uniqueItems.push(selectedItem);
+                }
+              }
+
+              this.model.set("selectedItems", uniqueItems);
+            } else {
+              this.model.set("selectedItems", selectedItems);
+            }
+
             this.model.set("feedback", questionModel.get("feedbackMessage"));
 
             if (this.model.get("_isVisible")) {

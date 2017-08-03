@@ -25,6 +25,8 @@ Settings
 
 > **_hideSelectedItem (boolean, default=false)**: Enable to hide the labels for the selected items when showing the selection-specific feedback.
 
+> **_hideDuplicateFeedback (boolean, default=false)**: Enable to hide feedback with duplicate text.
+
 Limitations
 -----------
 No known limitations.
