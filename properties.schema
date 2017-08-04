@@ -32,6 +32,14 @@
       "help": "Enable to hide the labels for the selected items when showing the selection-specific feedback.",
       "default": false,
       "validators": []
+    },
+    "_hideDuplicateFeedback": {
+      "type": "boolean",
+      "required": false,
+      "inputType": "Checkbox",
+      "title": "Hide duplicate feedback",
+      "help": "Enable to hide feedback that is identical for multiple items.",
+      "default": false
     }
   }
 }
