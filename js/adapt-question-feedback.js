@@ -79,6 +79,7 @@ define(["coreJS/adapt", "coreViews/componentView"], function(Adapt, ComponentVie
             }
 
             this.model.set("feedback", questionModel.get("feedbackMessage"));
+            this.render();
 
             if (this.model.get("_isVisible")) {
                 this.setCompletionStatus();
