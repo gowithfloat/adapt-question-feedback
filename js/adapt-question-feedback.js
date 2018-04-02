@@ -5,7 +5,6 @@ define(["coreJS/adapt", "coreViews/componentView"], function(Adapt, ComponentVie
 
             Adapt.on("questionView:showFeedback", this.onQuestionFeedbackRequested, this);
             Adapt.on("notify:opened", this._handleNotify, this);
-            this.model.on("change:feedback", this.render, this);
         },
 
         preRender: function() {
@@ -79,6 +78,7 @@ define(["coreJS/adapt", "coreViews/componentView"], function(Adapt, ComponentVie
             }
 
             this.model.set("feedback", questionModel.get("feedbackMessage"));
+            this.render();
 
             if (this.model.get("_isVisible")) {
                 this.setCompletionStatus();

@@ -1,5 +1,6 @@
 <div class="question-feedback-inner component-inner" role="region" aria-label="{{_globals._components._text.ariaRegion}}">
 	<div class="{{_component}}-header component-header">
+        {{#if feedback}}
 	    <div class="{{_component}}-header-inner component-header-inner">
 		    {{#if displayTitle}}
 	        <div class="{{_component}}-title component-title">
@@ -38,5 +39,6 @@
 	        </div>
 	        {{/if}}
 	    </div>
+        {{/if}}
 	</div>
 </div>
